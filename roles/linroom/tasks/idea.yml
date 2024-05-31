@@ -1,0 +1,12 @@
+- name: Install IDEA
+  block:
+  - name: Create destination for JetBrains IDEA
+    file:
+      path: /opt/IDEA
+      state: directory
+  - name: Download and unpack JetBrains IDEA
+    unarchive:
+      src: https://download.jetbrains.com/idea/ideaIC-2023.2.1.tar.gz
+      dest: /opt/IDEA
+      creates: /opt/IDEA/idea-IC-232.9559.62/build.txt
+      remote_src: yes

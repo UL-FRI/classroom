@@ -1,0 +1,7 @@
+# Informacijska varnost in zasebnost
+# David.Jelenc@fri.uni-lj.si
+# Java JDK, IntelliJ IDEA, VirtualBox
+dependencies:
+  - role: jdk
+  - role: idea
+  - role: virtualbox

@@ -1,0 +1,3 @@
+- name: Do not install GUI devel tools
+  debug:
+    msg: "Do not install GUI development libraries and tools"

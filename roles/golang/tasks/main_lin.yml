@@ -1,0 +1,5 @@
+- name: Install the GO programming language
+  apt:
+    name: golang
+    state: latest
+

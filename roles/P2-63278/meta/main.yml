@@ -1,0 +1,8 @@
+# Programiranje 2
+# bostjan.slivnik@fri.uni-lj.si
+# gedit, vscode, pdf viewer (evince), gcc, g++, make, JDK
+dependencies:
+  - role: jdk
+  - role: gedit
+  - role: vscode
+  - role: c_development

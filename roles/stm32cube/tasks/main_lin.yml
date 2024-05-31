@@ -1,0 +1,32 @@
+# TODO download stm32; deb install
+# https://www.st.com/en/development-tools/stm32cubeide.html#get-software
+#- name: Download stm32
+#  get_url:
+#    # url: https://unilj-my.sharepoint.com/:u:/r/personal/rozman_fri1_uni-lj_si/Documents/Arhiv/ImportantFiles/st-stm32cubeide_1.13.1_17479_20230728_0839_amd64.sh?download=1
+#    dest: /tmp
+#    mode: "u=rwx,g=rx,o=rx"
+#  register: download
+- name: Set filename
+  set_fact:
+    dest_fname: /tmp/st-stm32cubeide_1.13.1_17479_20230728_0839_amd64.sh
+
+- name: Download stm32
+  command:
+    cmd: wget 'https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/Eda8dp03JWtGrT3rdE4ECFUBv2qAGW_aujWujr5YkLp3JA?e=vJRUgY&download=1' -O {{ dest_fname }}
+    creates: "{{ dest_fname }} "
+    # url: https://unilj-my.sharepoint.com/:u:/r/personal/rozman_fri1_uni-lj_si/Documents/Arhiv/ImportantFiles/st-stm32cubeide_1.13.1_17479_20230728_0839_amd64.sh?download=1
+
+- name: Change script permissions
+  file:
+    path: "{{ dest_fname }}"
+    mode: '0755'
+
+- name: Run installer script
+  shell:
+    cmd: echo "/opt/st/STM32CubeIDE" | DISPLAY=:0 {{ dest_fname }} --nox11
+    creates: /opt/st/STM32CubeIDE
+
+- name: Delete downloaded file
+  file:
+    path: "{{ dest_fname }}"
+    state: absent

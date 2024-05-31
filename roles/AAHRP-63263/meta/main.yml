@@ -1,0 +1,7 @@
+# Analiza algoritmov in hevristično reševanje problemov
+# matej.piculin@fri.uni-lj.si
+# Windows, Java JDK, Eclipse, R, RStudio
+dependencies:
+  - role: rstudio
+  - role: eclipse
+  - role: jdk

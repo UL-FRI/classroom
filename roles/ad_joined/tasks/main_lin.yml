@@ -1,0 +1,34 @@
+- name: Enable create homedir on login
+  command: pam-auth-update --enable mkhomedir
+  become: true
+- name: Check whether we already joined
+  command: /bin/bash -c "/usr/sbin/realm list"
+  register: realm_list_results
+  - name: Set OU
+    set_fact:
+      ou_path: "OU={{locations[0]}},OU=Ucilnice"
+  - name: Show state
+    debug:
+      msg: "Host: {{inventory_hostname}}, OU: {{ou_path}}"
+  # - import_tasks: ne_sysprep.yaml
+  - name: "Rename"
+    # Racunalnik najprej preimenujmo, da ne bosta v domeni obenem 2 z istim imenom
+    hostname:
+      name: "{{inventory_hostname}}"
+    register: hostname_res
+
+- name: Join using realmd
+  expect:
+    command: realm join --user={{ad_join_user}} --computer-ou={{ou_path}} FRI1.UNI-LJ.SI
+    responses:
+      (?i)Password: "{{ad_join_password}}"
+  ignore_errors: yes
+  when: realm_list_results.stdout == ""
+
+- name: Copy sssd config
+  template:
+    src: sssd.conf
+    dest: "/etc/sssd/sssd.conf"
+    owner: root
+    mode: 0600
+

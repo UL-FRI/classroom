@@ -1,0 +1,6 @@
+# Numerična matematika
+# Martin.Vuk@fri.uni-lj.si
+# VS Code, Julia
+dependencies:
+  - role: vscode
+  - role: julia

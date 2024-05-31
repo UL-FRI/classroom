@@ -1,0 +1,6 @@
+# Analiza algoritmov in hevristično reševanje problemov
+# matej.piculin@fri.uni-lj.si
+# Windows, Java JDK, Eclipse, R, RStudio
+- include_tasks: rstudio.yml
+- include_tasks: eclipse.yml
+- include_tasks: jdk.yml

@@ -1,0 +1,6 @@
+# Teorija informacij in sistemov
+# Davor.Sluga@fri.uni-lj.si
+# Windows, VS Code, Python 3
+dependencies:
+  - role: vscode
+  - role: thonny

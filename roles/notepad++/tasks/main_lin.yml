@@ -1,0 +1,24 @@
+# TODO install Notepad++
+# ansible_os_family: "Windows" / "Debian"
+- name: Install notepad++
+  debug:
+    msg: "Install Notepad++"
+- name: Install Wine
+  apt:
+    name: wine-development
+    state: latest
+- name: Install Wine binfmt support
+  apt:
+    name: wine-binfmt
+    state: latest
+
+- name: Create dir
+  file:
+    path: /opt/notepad++
+    state: directory
+
+- name: Download and unpack Notepad++
+  unarchive:
+    src: https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.5.7/npp.8.5.7.portable.x64.zip
+    dest: /opt/notepad++
+    remote_src: yes

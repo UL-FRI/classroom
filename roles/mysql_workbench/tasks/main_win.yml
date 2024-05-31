@@ -1,0 +1,10 @@
+- name: Download mysql workbench
+  win_get_url:
+    url: "https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-8.0.34-winx64.msi"
+    dest: C:\mysql-workbench-community-8.0.34-winx64.msi
+    http_agent: "Wget/1.21.3"
+
+- name: Install MySQL workbench
+  win_package:
+    path: C:\mysql-workbench-community-8.0.34-winx64.msi
+

@@ -1,0 +1,13 @@
+- name: create destination
+  file:
+    path: /opt/Arduino
+    state: directory
+
+- name: unpack Arduino
+  unarchive:
+    src: 
+    dest: /opt/Arduino-cli
+    remote_src: yes
+
+#- name: Add .json for new boards
+# 

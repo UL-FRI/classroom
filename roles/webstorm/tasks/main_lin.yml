@@ -1,0 +1,15 @@
+#- name: Install WebStorm
+#  block:
+#  - name: Create destination for JetBrains WebStorm
+#    file:
+#      path: /opt/webstorm
+#      state: directory
+#TODO: poskrbi za namestitev webstorm
+  - name: Download and unpack JetBrains WebStorm
+    debug:
+      msg: "Do not download and unpack WebStorm since we do not have the licenses yet"
+    #unarchive:
+    #  src: https://download.jetbrains.com/idea/ideaIC-2023.2.1.tar.gz
+    #  dest: /opt/webstorm
+    #  creates: /opt/webstorm/idea-IC-232.9559.62/build.txt
+    #  remote_src: yes

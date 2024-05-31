@@ -1,0 +1,11 @@
+# Strojno učenje
+# matej.piculin@fri.uni-lj.si, Petar.Vracar@fri.uni-lj.si
+# Windows, R, RStudio
+dependencies:
+  - role: python3
+  - role: pandas
+  - role: scipy
+  - role: xgboost
+  - role: statsmodels
+  - role: tensorflow
+  - role: statsmodels

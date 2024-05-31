@@ -1,0 +1,12 @@
+# Funkcijsko programiranje
+# Klemen.Klanjscek@fri.uni-lj.si, Matjaz.Kukar@fri.uni-lj.si
+# Windows, GNU/Linux, VS Code, Python 3, Racket (z DrRacket), SML/NJ, Emacs, rlwrap
+#
+dependencies:
+  - role: vscode
+  - role: python3
+  - role: racket
+  - role: emacs
+  - role: smlnj
+
+

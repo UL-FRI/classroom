@@ -1,0 +1,49 @@
+- name: Set OU
+  set_fact:
+    ou_path: "OU={{locations[0]}},OU=Ucilnice,DC=fri1,DC=uni-lj,DC=si"
+- name: "Rename"
+  # Racunalnik najprej preimenujmo, da ne bosta v domeni obenem 2 z istim imenom
+  win_hostname:
+    name: "{{inventory_hostname}}"
+  register: hostname_res
+- name: "Reboot after hostname change"
+  win_reboot:
+  when: hostname_res.reboot_required
+- name: Stop Windows Update Service
+  win_service: 
+    name: wuauserv
+    state: stopped
+- name: Clear WSUS ID from registry
+  win_regedit: 
+    path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate
+    name: "{{item}}"
+    state: absent
+    delete_key: yes
+  with_items:
+    - PingID
+    - AccountDomainSid
+    - SusClientId
+    - SusClientIDValidation
+- name: Start Windows Update Service
+  win_service: 
+    name: wuauserv
+    state: started
+- name: "Join domain"
+  win_domain_membership:
+    domain_admin_user: "{{adjoin_user}}"
+    domain_admin_password: "{{adjoin_password}}"
+    dns_domain_name: "{{domain_name}}"
+    domain_ou_path: "{{ou_path}}"
+    hostname: "{{inventory_hostname}}"
+    state: domain
+  register: domain_state
+- name: Reset WSUS authorization
+  win_command: wuauclt.exe /resetauthorization /detectnow
+  ignore_errors: yes
+- name: Update windows
+  win_command: wuauclt.exe /updatenow
+  ignore_errors: yes
+- name: Reboot
+  win_command: "shutdown /r"
+  when: domain_state.reboot_required
+

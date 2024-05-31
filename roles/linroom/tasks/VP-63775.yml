@@ -1,0 +1,13 @@
+# Varnost Podatkov
+# david.jelenc@fri.uni-lj.si
+# Python (in standardno pripadajoča šara jupyter lab) in IntelliJ IDEA PyCharm CE
+# PyCharm
+# Java (kar je bilo lani bo ok) in IntelliJ IDEA CE
+# maven
+# git
+- include_tasks: git.yml
+- include_tasks: maven.yml
+- include_tasks: idea.yml
+- include_tasks: jdk.yml
+- include_tasks: jupyter.yml
+- include_tasks: pycharm.yml

@@ -1,0 +1,4 @@
+- name: Install pyodbc
+  apt:
+    name: python3-pyodbc
+    state: latest

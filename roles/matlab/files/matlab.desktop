@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Matlab
+GenericName=Matlab
+Comment=Use Octave instead
+Exec=matlab
+Icon=matlab
+Terminal=false
+Type=Application
+Categories=Science;Math;Education;
+StartupNotify=true

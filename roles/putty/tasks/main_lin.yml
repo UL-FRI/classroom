@@ -1,0 +1,8 @@
+- name: Install serial terminals (putty alternatives)
+  apt:
+    name:
+      - screen
+      - cutecom
+      - gtkterm
+      - minicom
+    state: latest

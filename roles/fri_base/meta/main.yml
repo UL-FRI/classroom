@@ -1,0 +1,11 @@
+dependencies:  
+  - role: firefox
+  - role: libreoffice
+  - role: 7zip
+  - role: chrome
+  - role: msys2
+  - role: pycharm # not required by anyone but used by everyone
+  - role: sublime-text
+  - role: sumatrapdf
+  - role: vlc
+  - role: wget

@@ -1,0 +1,5 @@
+- name: Install ProjectLibre
+  win_package:
+    path: "https://deac-riga.dl.sourceforge.net/project/projectlibre/ProjectLibre/1.9.3/projectlibre-1.9.3.exe"
+    # path: "https://sourceforge.net/projects/projectlibre/files/ProjectLibre/1.9.3/projectlibre-1.9.3.exe/download?use_mirror=deac-riga&download=&failedmirror=deac-ams.dl.sourceforge.net"
+    arguments: /VerySilent

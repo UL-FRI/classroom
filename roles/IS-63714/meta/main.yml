@@ -1,0 +1,10 @@
+# Informacijski sistemi
+# Miha.Grohar@fri.uni-lj.si
+# Windows, GNU/Linux, Docker, VS Code, dotnet6 SDK, GIT, Android Studio
+dependencies:
+  - role: docker
+  - role: vscode
+  - role: dotnet6
+  - role: git
+  - role: android_studio
+

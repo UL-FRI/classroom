@@ -1,0 +1,5 @@
+# Da se SolidWorks namesti v VM, mora biti CPUID nastavljen na "Host", ne pa KVM-64.
+#
+# TODO namesti solidworks.
+# TODO: nastavi license server na 25734@licence-1.aluo.uni-lj.si
+#

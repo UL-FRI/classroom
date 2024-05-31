@@ -1,0 +1,25 @@
+- name: create destination
+  file:
+    path: /opt/Arduino
+    state: directory
+
+- name: unpack Arduino
+  unarchive:
+    src: https://downloads.arduino.cc/arduino-ide/arduino-ide_2.2.1_Linux_64bit.zip
+    dest: /opt/Arduino
+    remote_src: yes
+
+- name: unpack Arduino-cli
+  unarchive:
+    src: https://downloads.arduino.cc/arduino-cli/arduino-cli_latest_Linux_64bit.tar.gz
+    dest: /opt/Arduino
+    remote_src: yes
+    creates: /opt/Arduino/arduino-cli
+
+- name: Add symlink to /usr/local/bin
+  file:
+    src: /opt/Arduino/arduino-cli
+    path: /usr/local/bin/arduino-cli
+    state: link
+
+

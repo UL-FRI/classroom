@@ -1,0 +1,7 @@
+# Programiranje 2
+# Tomaz.Dobravec@fri.uni-lj.si
+# Windows, Java JDK, IntelliJ IDEA, Apache NetBeans
+
+- include_tasks: jdk.yml
+- include_tasks: idea.yml
+- include_tasks: netbeans.yml

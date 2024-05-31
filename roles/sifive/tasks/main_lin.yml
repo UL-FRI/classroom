@@ -1,0 +1,23 @@
+# SiFive je bil nekoc prosto dostopen.
+# Sedaj hocejo, da se registriras... da prides do kode
+# Potem pa ti ne dajo izvorne kode.
+# ucilnice_install/2022-23/ORS_VGRS_Bulic
+# 
+#
+- name: create destination for SiFive
+  file:
+    path: /opt/SiFive
+    state: directory
+
+- name: Download SiFive Studio
+  command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/bulic_fri1_uni-lj_si/ERb-TvMrILpIpFYT6n9u1WYB-gkBMh5SnM3_xSFgsFAFtA?e=2BSN8F&download=1" -O /opt/sifive.tgz
+  args:
+    creates: /opt/sifive.tgz
+
+- name: "Install SiFive Studio"
+  unarchive:
+    src: /opt/sifive.tgz
+    dest: /opt/SiFive
+  # dest: /opt/SiFive
+    remote_src: yes
+

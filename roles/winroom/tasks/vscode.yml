@@ -1,0 +1,20 @@
+- name: Install VS Code
+  win_chocolatey:
+    name: vscode
+
+- name: Add firewall rule for VS Code
+  win_firewall_rule:
+    name: "Allow inbound traffic for VS Code"
+    program: "%ProgramFiles%\\Microsoft VS Code\\code.exe"
+    action: allow
+    direction: in
+
+- name: Include VS code extension list
+  include_vars: vscode_extensions.yml
+
+- name: Install VS Code extensions
+  win_shell: code --extensions-dir "C:\\Program Files\\Microsoft VS Code\\resources\\app\\extensions" --install-extension "{{ item }}"
+  args:
+    chdir: "%ProgramFiles%\\Microsoft VS Code\\bin"
+  loop: "{{VSCode_Extensions}}"
+

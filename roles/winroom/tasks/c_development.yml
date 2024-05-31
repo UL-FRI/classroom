@@ -1,0 +1,3 @@
+- name: Do not install C development tools
+  debug:
+    msg: "Do not install C development tools"

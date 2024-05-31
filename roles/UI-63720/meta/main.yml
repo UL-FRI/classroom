@@ -1,0 +1,5 @@
+# Umetna inteligenca
+# Petar.Vracar@fri.uni-lj.si
+# Windows, R, RStudio
+dependencies:
+  - role: rstudio

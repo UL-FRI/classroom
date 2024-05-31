@@ -1,0 +1,14 @@
+# Varnost Podatkov
+# david.jelenc@fri.uni-lj.si
+# Python (in standardno pripadajoča šara jupyter lab) in IntelliJ IDEA PyCharm CE
+# PyCharm
+# Java (kar je bilo lani bo ok) in IntelliJ IDEA CE
+# maven
+# git
+dependencies:
+  - role: git
+  - role: maven
+  - role: idea
+  - role: jdk
+  - role: jupyter
+  - role: pycharm

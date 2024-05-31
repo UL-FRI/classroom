@@ -1,0 +1,8 @@
+# Spletno Programiranje
+# dejan.lavbic@fri.uni-lj.si
+# git, docker, Node.js + npm, Visual Studio Code
+dependencies:
+  - role: git
+  - role: docker
+  - role: nodejs
+  - role: webstorm

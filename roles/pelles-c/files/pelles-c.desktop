@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Pelles-C
+GenericName=Pelles-C
+Comment=A simple IDE
+Exec=wine "/mnt/C/Program Files/PellesC/Bin/poide.exe"
+Icon=pelles-c
+Terminal=false
+Type=Application
+Categories=Education;Development;ComputerScience;
+StartupNotify=true

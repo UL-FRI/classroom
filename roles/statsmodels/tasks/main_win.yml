@@ -1,0 +1,3 @@
+- name: Install statsmodels
+  win_command: pip install statsmodels
+

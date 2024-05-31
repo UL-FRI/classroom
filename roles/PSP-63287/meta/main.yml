@@ -1,0 +1,6 @@
+# Programiranje specifičnih platform
+# Veljko.Pejovic@fri.uni-lj.si
+# Android Studio, Arduino IDE
+dependencies:
+  - role: android_studio
+  - role: arduino

@@ -1,0 +1,5 @@
+# Tehnologija iger in navidezna resničnost
+# Bojan.Klemenc@fri.uni-lj.si
+# macOS, Xcode
+dependencies:
+  - role: xcode

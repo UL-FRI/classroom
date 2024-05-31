@@ -1,0 +1,15 @@
+- name: Set SML/NJ
+  set_fact:
+    target_version: "110.99.3"
+
+- name: Install SML/NJ
+  win_package:
+    path: "https://smlnj.org/dist/working/{{ target_version }}/smlnj-{{ target_version }}.msi"
+    creates_path: "%ProgramFiles(x86)%\\SMLNJ\\bin\\sml.bat"
+
+#- name: Disable echo for sml.bat (BOF not found in 2023?)
+#  lineinfile:
+#    path: "%ProgramFiles(x86)%\\SMLNJ\\bin\\sml.bat"
+#    line: "@echo OFF"
+#    insertbefore: "BOF"
+

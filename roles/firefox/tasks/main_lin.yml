@@ -1,0 +1,22 @@
+- name: Add Firefox not-a-snap repository
+  block:
+    - name: Pin Firefox PPA package priority
+      template:
+        src: mozilla-firefox-apt-preferences
+        dest: /etc/apt/preferences.d/mozilla-firefox
+    - name: Enable Firefox unattended upgrades
+      template:
+        src: mozilla-firefox-unattended-upgrades 
+        dest: /etc/apt/apt.conf.d/51unattended-upgrades-firefox
+    - name: Add Firefox PPA
+      apt_repository:
+        repo: ppa:mozillateam/ppa
+        state: present
+        update_cache: True
+        validate_certs: False
+
+- name: Install Firefox
+  apt:
+    name:
+      - firefox
+    state: latest

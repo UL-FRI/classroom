@@ -1,0 +1,8 @@
+- name: Do not install C development tools
+  debug:
+    msg: "Do not install C development tools"
+
+- name: Install MinGW
+  win_chocolatey:
+    name: mingw
+    state: latest

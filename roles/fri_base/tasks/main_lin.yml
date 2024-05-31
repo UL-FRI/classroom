@@ -1,0 +1,138 @@
+- name: Install generally useful packages
+  apt:
+    name:
+      - i3
+      - sway
+      - vlc
+      - mpv
+      - ffmpeg
+      - emacs
+      - kwrite
+      - kate
+      - krita
+      - blender
+      - inkscape
+      - pcmanfm-qt
+      - qutebrowser
+      - chromium-browser
+      - firefox
+      - qemu
+      - qemu-kvm
+      - qemu-utils
+      - virt-manager
+      - wine-development
+      - dosbox
+      - webext-ublock-origin-chromium
+      - webext-ublock-origin-firefox
+      - nethack-console
+      - zsh
+      - tmux
+      - screen
+      - curl
+      - git-gui
+      - git-cola
+      - kdiff3
+      - thonny
+      - ttf-mscorefonts-installer
+      - libhivex-bin
+      - overlayroot
+      - nfs-common
+      - cifs-utils
+      - neovim-qt
+      - binwalk
+      - iotop
+      - htop
+      - jdupes
+    state: latest
+    update_cache: yes
+
+- name: Remove broken or unnecessary packages
+  apt:
+    name:
+      - xfce4-screensaver
+      - xscreensaver
+    state: absent
+
+- name: Set up additional groups for students
+  vars:
+    additional_groups:
+      - wireshark
+      - kvm
+      - dialout
+      - libvirt
+      - vboxusers
+      - ubridge
+      - docker
+  block:
+    - name: create user@.service.d
+      file:
+        path:  /etc/systemd/system/user@.service.d
+        state: directory
+    - name: override groups in systemd
+      template:
+        src: systemd_group_override.conf
+        dest: /etc/systemd/system/user@.service.d/override.conf
+    - name: create /etc/security/group.conf
+      template:
+        src: security_group.conf
+        dest: /etc/security/group.conf
+    - name: create pam config for libpam_group
+      template:
+        src: pamconfig_groups
+        dest: /usr/share/pam-configs/groups
+    - name: enable libpam_group
+      shell: pam-auth-update --enable groups
+
+- name: Set default keyboard layout to SI
+  template:
+    src: default_keyboard
+    dest: /etc/default/keyboard
+
+- name: Add mount - C
+  mount:
+    boot: true
+    fstype: ntfs-3g
+    src: UUID=A09E30889E30594C
+    path: /mnt/C
+    state: mounted
+    opts: defaults,nofail
+
+- name: Add mount - D
+  mount:
+    boot: true
+    fstype: ntfs-3g
+    src: "LABEL=D:"
+    path: /mnt/D
+    state: mounted
+    opts: defaults,nofail
+
+- name: Add mount - partimag
+  mount:
+    boot: true
+    fstype: nfs
+    src: "10.32.254.16:/srv/nfs/clonezilla_images"
+    path: /home/partimag
+    state: mounted
+    opts: defaults,nofail
+
+- name: Add mount - ucilnice_d
+  mount:
+    boot: true
+    fstype: cifs
+    src: "//ucilnicesmb.fri1.uni-lj.si/ucilnice_d"
+    path: /mnt/ucilnice_d
+    state: mounted
+    opts: guest,soft,nofail
+
+- name: Set time to local RTC
+  shell: "timedatectl set-local-rtc 1 --adjust-system-clock"
+
+- name: Install ethtool
+  apt:
+    name: ethtool
+    state: latest
+
+- name: Add udev rule to enable wake-on-lan for ethernet interfaces
+  copy:
+    dest: /etc/udev/rules.d/
+    src: 99-wakeonlan.rules

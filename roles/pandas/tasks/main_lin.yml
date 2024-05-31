@@ -1,0 +1,4 @@
+- name: Install pandas
+  apt:
+    name: python3-pandas
+    state: latest

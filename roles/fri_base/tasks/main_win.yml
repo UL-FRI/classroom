@@ -1,0 +1,16 @@
+- name: Set timezone
+  win_timezone:
+    timezone: Central Europe Standard Time
+- name: Show file extensions in Explorer
+  win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    name: HideFileExt
+    data: 0
+    type: dword
+- name: Install PSCX
+  community.windows.win_psmodule:
+    name: Pscx
+    state: present
+
+# TODO: turn on GPO to allow guest SMB logins
+# TODO: open firewall for Samba

@@ -1,0 +1,3 @@
+- name: Do not install SumatraPDF
+  debug:
+    msg: "Do not install SumatraPDF"

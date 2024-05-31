@@ -1,0 +1,8 @@
+- name: Install pytorch
+  apt:
+    name:
+      - python3-torch
+      - python3-skorch
+      - python3-torch-ignite
+    state: latest
+

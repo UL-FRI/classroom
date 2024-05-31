@@ -1,0 +1,16 @@
+- name: Download PulseView
+  win_get_url:
+    url: https://sigrok.org/download/binary/pulseview/pulseview-0.4.2-64bit-static-release-installer.exe
+    # url: https://sigrok.org/download/binary/pulseview/pulseview-NIGHTLY-64bit-static-release-installer.exe
+    dest: C:\
+  register: download
+
+- name: Install PulseView
+  win_package:
+    path: "{{ download.dest }}"
+    arguments: /S /Verysilent /AllUsers
+
+#- name: Remove temporary files
+#  win_file:
+#    path: "{{ download.dest }}"
+#    state: absent

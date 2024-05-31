@@ -1,0 +1,10 @@
+- hosts: ucilnice-prototip
+  become_method: sudo
+  become: true
+  vars:
+    ansible_port: 1001
+    ansible_become_pass: '{{ lookup("env", "ANSIBLE_PASSWORD") }}'
+    ansible_password: '{{ lookup("env", "ANSIBLE_PASSWORD") }}'
+    ansible_connection: 'ssh'
+  roles:
+    - all_classes

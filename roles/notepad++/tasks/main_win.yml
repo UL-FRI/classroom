@@ -1,0 +1,13 @@
+# TODO disable update check
+- name: Install Notepad++
+  win_chocolatey:
+    name: notepadplusplus
+
+- name: Add Notepad++ to PATH
+  win_path:
+    name: PATH
+    elements: C:\Program Files\Notepad++\
+    scope: machine
+    state: present
+
+

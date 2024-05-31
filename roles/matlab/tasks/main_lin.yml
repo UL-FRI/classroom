@@ -1,0 +1,72 @@
+- name: Set Matlab version and destination
+  set_fact:
+    target_version: "R2023b"
+    install_dir: "/mnt/ucilnice_d/install/matlab/"
+    license_path: "/mnt/ucilnice_d/install/matlab/network.lic"
+    dest_dir: /opt/matlab
+
+- name: Mount Matlab ISO
+  mount:
+    src: "{{install_dir}}/{{ target_version }}_Linux.iso"
+    path: "/tmp/matlab_iso"
+    fstype: auto
+    state: "{{ item }}"
+  loop:
+    - unmounted
+    - ephemeral
+
+- name: Prepare installer_input.txt
+  template:                                                                                
+    src: installer_input.txt
+    dest: /tmp/matlab_installer_input.txt
+
+- name: Install Matlab
+  command:
+    cmd: /tmp/matlab_iso/install -inputFile "/tmp/matlab_installer_input.txt"
+    # creates: "{{ dest_dir }}/VersionInfo.xml"
+#- name: Unmount Matlab ISO
+#  win_disk_image:
+#    image_path: "{{ installers }}\\matlab\\matlab-{{ target_version }}_windows.iso"
+#    state: absent
+
+- name: Unount Matlab ISO
+  mount:
+    path: "/tmp/matlab_iso"
+    state: unmounted
+
+# TODO MATLAB throws license error -83 when run
+- name: Create licenses dir
+  file:
+    path: "{{dest_dir}}/licenses"
+    state: directory
+
+- name: Install Matlab license
+  copy:
+    src: "{{ license_path }}"
+    dest: "{{ dest_dir }}/licenses/network.lic"
+    remote_src: true
+
+- name: Add symlink to /usr/local/bin
+  file:
+    src: /opt/matlab/bin/matlab
+    path: /usr/local/bin/matlab
+    state: link
+
+- name: Install .desktop file
+  block:
+    - file:
+        path: /usr/local/share/applications
+        state: directory
+    - copy:
+        dest: /usr/local/share/applications/matlab.desktop
+        src: matlab.desktop
+
+- name: Install icon
+  block:
+    - file:
+        path: /usr/local/share/icons
+        state: directory
+    - copy:
+        src: "{{ dest_dir }}/bin/glnxa64/cef_resources/matlab_icon.png"
+        dest: /usr/local/share/icons/matlab.png
+        remote_src: true

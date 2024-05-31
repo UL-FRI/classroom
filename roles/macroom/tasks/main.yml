@@ -1,0 +1,16 @@
+- name: Download R
+  get_url:
+    url: https://cran.r-project.org/bin/macosx/base/R-4.2.1.pkg 
+    dest: /tmp/R-4.2.1.pkg
+- name: install R
+  shell: installer -pkg /tmp/R-4.2.1.pkg -target /
+- name: Download RStudio
+  get_url:
+    url: https://download1.rstudio.org/desktop/macos/RStudio-2022.07.2-576.dmg
+    dest: /tmp/RStudio-2022.07.2-576.dmg
+- name: mount RStudio .dmg
+  shell: hdiutil attach /tmp/RStudio-2022.07.2-576.dmg
+- name: install RStudio
+  shell: cp -a /Volumes/RStudio-2022.07.2-576 /Volumes/Applications
+- name: umount RStudio .dmg
+  shell: hdiutil detach /Volumes/RStudio-2022.07.2-576 

@@ -1,0 +1,8 @@
+# Komunikacija človek računalnik
+# Ales.Smrdel@fri.uni-lj.si
+# Java JDK, Matlab, wfdb, Apache NetBeans
+dependencies:
+  - role: jdk
+  - role: matlab
+  - role: wfdb
+  - role: netbeans

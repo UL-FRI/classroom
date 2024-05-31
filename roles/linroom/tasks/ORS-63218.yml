@@ -1,0 +1,6 @@
+# Osnove Računalniških Sistemov
+# Patricio.Bulic@fri.uni-lj.si
+#
+
+- include_tasks: vscode.yml
+- include_tasks: sifive.yml

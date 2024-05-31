@@ -1,0 +1,4 @@
+- name: Do NOT install Chrome
+  apt:
+    name: chromium
+    state: latest

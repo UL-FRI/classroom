@@ -1,0 +1,5 @@
+# Računalniška grafika in tehnologija iger
+# Ziga.Lesar@fri.uni-lj.si
+# Windows, Unity
+dependencies:
+  - role: unity

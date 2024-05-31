@@ -1,0 +1,6 @@
+# Porazdeljeni sistemi
+# Davor.Sluga@fri.uni-lj.si
+# Windows, VS Code, golang
+dependencies:
+  - role: vscode
+  - role: golang

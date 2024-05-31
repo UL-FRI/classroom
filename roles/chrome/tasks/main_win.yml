@@ -1,0 +1,11 @@
+- name: Install Chrome
+  win_chocolatey:
+    name: googlechrome
+    ignore_checksums: True # TODO: re-enable checksums when the package is fixed
+
+- name: Disable Chrome updates
+  win_regedit:
+    path: HKLM:\SOFTWARE\Policies\Google\Update
+    name: AutoUpdateCheckPeriodMinutes
+    type: dword
+    data: 0

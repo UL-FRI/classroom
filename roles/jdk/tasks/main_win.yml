@@ -1,0 +1,50 @@
+- name: Install Oracle JDK
+  win_package:
+    path: https://download.oracle.com/java/20/latest/jdk-20_windows-x64_bin.msi
+    arguments: INSTALLLEVEL=3
+
+- name: Find Java version
+  win_reg_stat:
+    path: HKLM:\SOFTWARE\JavaSoft\JDK
+    name: CurrentVersion
+  register: reg
+
+- name: Find Java home
+  win_reg_stat:
+    path: "HKLM:\\SOFTWARE\\JavaSoft\\JDK\\{{ reg['value'] }}"
+    name: JavaHome
+  register: reg
+
+- name: Set JAVA_HOME
+  win_environment:
+    name: JAVA_HOME
+    value: "{{ reg['raw_value'] }}"
+    level: machine
+
+- name: Add "." to CLASSPATH
+  win_path:
+    name: CLASSPATH
+    elements: "."
+    state: present
+    scope: machine
+
+- name: Disable Java updates
+  win_regedit:
+    path: HKLM:\SOFTWARE\WOW6432Node\JavaSoft\Java Update\Policy
+    name: EnableJavaUpdate
+    type: dword
+    data: 0
+
+#- name: Download Java documentation
+# TODO: download Java doc
+- name: Download Java doc
+  win_get_url:
+    path: "{{ reg['raw_value'] }}"
+    url: https://download.oracle.com/otn_software/java/jdk/21+35/fd2272bbf8e04c3dbaee13770090416c/jdk-21_doc-all.zip
+    register: downloaded_docs
+
+- name: Unpack Java docs
+  win_unzip:
+    path: "{{ downloaded_docs }}"
+    dest: "{{ reg['raw_value'] }}\\docs"
+    delete_archive: yes

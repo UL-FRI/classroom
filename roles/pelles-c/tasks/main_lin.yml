@@ -1,0 +1,30 @@
+# TODO install Pelles
+- name: Install Pelles
+  debug:
+    msg: "Install Pelles-C"
+- name: Install Wine
+  apt:
+    name: wine-development
+    state: latest
+- name: Install Wine binfmt support
+  apt:
+    name: wine-binfmt
+    state: latest
+
+- name: Install icon
+  block:
+    - file:
+        path: /usr/local/share/icons
+        state: directory
+    - copy:
+        src: "pelles-c.png"
+        dest: /usr/local/share/icons/pelles-c.png
+
+- name: Create .desktop file
+  block:
+    - file:
+        path: /usr/local/share/applications
+        state: directory
+    - copy:
+        dest: /usr/local/share/applications/pelles-c.desktop
+        src: pelles-c.desktop

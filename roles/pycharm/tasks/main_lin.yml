@@ -1,0 +1,12 @@
+- name: Install PyCharm
+  block:
+  - name: Create destination for JetBrains PyCharm
+    file:
+      path: /opt/PyCharm
+      state: directory
+  - name: Download and unpack JetBrains PyCharm
+    unarchive:
+      src: https://download.jetbrains.com/python/pycharm-community-2023.2.1.tar.gz
+      dest: /opt/PyCharm
+      creates: /opt/PyCharm/pycharm-community-2023.2.1/build.txt
+      remote_src: yes

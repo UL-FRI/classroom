@@ -1,0 +1,3 @@
+- name: Install xgboost
+  win_command: pip install xgboost
+

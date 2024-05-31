@@ -1,0 +1,2 @@
+- name: Install pandas
+  win_command: pip install pandas

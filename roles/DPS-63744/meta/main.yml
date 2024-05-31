@@ -1,0 +1,8 @@
+# Digitalno procesiranje signalov
+# Aleks.Huc@fri.uni-lj.si
+# Windows, GNU/Linux, Matlab, wfdb, Octave, Audacity
+dependencies:
+  - role: matlab
+  - role: wfdb
+  - role: octave
+  - role: audacity

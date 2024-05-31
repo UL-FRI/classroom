@@ -1,0 +1,6 @@
+# Vzporedni in porazdeljeni sistemi in algoritmi
+# Davor.Sluga@fri.uni-lj.si, Rok.Cesnovar@fri.uni-lj.si
+# Windows, VS Code, Build Tools for Visual Studio 2022
+dependencies:
+  - role: vscode
+  - role: visual_studio

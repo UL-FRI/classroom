@@ -1,0 +1,6 @@
+- name: Install statsmodels
+  apt:
+    name:
+      - python3-statsmodels
+    state: latest
+

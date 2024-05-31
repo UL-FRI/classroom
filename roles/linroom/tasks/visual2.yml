@@ -1,0 +1,13 @@
+# TODO install PowerDesigner
+- name: Install VisUAL2
+  debug:
+    msg: "Install Visual2"
+- name: Create dest dir
+  file:
+    path: /opt/VisUAL2
+    state: directory
+- name: Install AppImage
+  get_url:
+    url: https://github.com/scc416/Visual2/releases/download/1.7.0/VisUAL2.1.7.0.AppImage
+    dest: /opt/VisUAL2/VisUAL2.1.7.0.AppImage
+    mode: 'u=rwx,g=rx,o=rx'

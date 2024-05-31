@@ -1,0 +1,9 @@
+# Algoritmi in podatkovne strukture 1
+# tomaz.hocevar@fri.uni-lj.si, bojan.zunkovic@fri.uni-lj.si, polz@fri.uni-lj.si
+# Windows, Java JDK, Eclipse
+#   - role: JDK
+#   - role: Eclipse
+dependencies:
+  - role: c_development
+  - role: vscode
+

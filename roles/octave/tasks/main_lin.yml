@@ -1,0 +1,7 @@
+- name: Install Octave
+  apt:
+    name: 
+      - octave
+      - cantor
+      - cantor-backend-octave
+    state: latest 

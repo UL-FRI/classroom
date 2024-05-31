@@ -1,0 +1,7 @@
+# Elektronsko poslovanje
+# David.Jelenc@fri.uni-lj.si
+# Windows, VirtualBox, Android Studio
+#
+dependencies:
+  - role: virtualbox
+  - role: android_studio

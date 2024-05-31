@@ -1,0 +1,2 @@
+- name: Install pytorch
+  win_command: pip install torch skorch pytorch-ignite

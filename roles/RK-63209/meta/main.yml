@@ -1,0 +1,10 @@
+# Računalniške komunikacije
+# Ales.Jaklic@fri.uni-lj.si, Matjaz.Pancur@fri.uni-lj.si, Jure.Tuta@fri.uni-lj.si, Domen.Kosir@fri.uni-lj.si
+# GNU/Linux, GNS3, Docker, VS Code, wireshark, Java JDK, Python 3
+dependencies:
+  - role: docker
+  - role: gns3
+  - role: vscode
+  - role: wireshark
+  - role: jdk
+

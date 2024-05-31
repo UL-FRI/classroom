@@ -1,0 +1,7 @@
+- name: Install xgboost
+  apt:
+    name:
+      - xgboost
+      - python3-xgboost
+    state: latest
+

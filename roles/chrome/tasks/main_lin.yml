@@ -1,0 +1,12 @@
+- name: Add Chromium not-a-snap repository
+  apt_repository:
+    repo: ppa:xtradeb/apps
+    state: present
+    update_cache: True
+    validate_certs: False
+
+- name: Install Chromium instead of Chrome
+  apt:
+    name: chromium-browser
+    state: latest
+

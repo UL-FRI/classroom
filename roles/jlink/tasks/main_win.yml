@@ -1,0 +1,3 @@
+- name: Do not install JLink on Windows
+  debug:
+    msg: "Do not install JLink on Windows"

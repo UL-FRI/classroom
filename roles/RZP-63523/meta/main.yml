@@ -1,0 +1,8 @@
+# Računalniška zvočna produkcija
+# Aleks.Huc@fri.uni-lj.si
+# IntelliJ IDEA, Audacity, GIT
+dependencies:
+  - role: git
+  - role: audacity
+  - role: idea
+

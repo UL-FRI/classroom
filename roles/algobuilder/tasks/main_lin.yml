@@ -1,0 +1,4 @@
+- name: Do not install AlgoBuilder
+  debug:
+    msg: "Do not install AlgoBuilder on Linux"
+

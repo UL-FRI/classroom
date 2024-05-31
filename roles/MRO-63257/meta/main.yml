@@ -1,0 +1,5 @@
+# Modeliranje računalniških omrežij
+# Miha.Janez@fri.uni-lj.si
+# OMNeT++, INET Framework
+dependencies:
+  - role: omnetpp

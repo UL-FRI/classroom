@@ -1,0 +1,14 @@
+- name: Add NodeJS repo key
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key
+    keyring: /etc/apt/keyrings/nodesource.gpg
+
+- name: Add NodeJS repo url
+  apt_repository:
+    repo: "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main"
+
+- name: Install NodeJS
+  apt:
+    name: nodejs
+    state: latest
+

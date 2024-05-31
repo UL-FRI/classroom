@@ -1,0 +1,4 @@
+- name: Install PulseView
+  apt:
+    name: pulseview
+    state: latest

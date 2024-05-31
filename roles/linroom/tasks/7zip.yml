@@ -1,0 +1,4 @@
+- name: Install 7zip
+  apt:
+    name: 7zip
+    state: latest

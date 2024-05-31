@@ -1,0 +1,8 @@
+# Algoritmi in podatkovne strukture 1
+# tomaz.hocevar@fri.uni-lj.si, bojan.zunkovic@fri.uni-lj.si, polz@fri.uni-lj.si
+# Windows, Java JDK, Eclipse
+# - include_tasks: JDK.yml
+# - include_tasks: Eclipse.yml
+- include_tasks: c_development.yml
+- include_tasks: vscode.yml
+

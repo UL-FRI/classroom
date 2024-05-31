@@ -1,0 +1,12 @@
+- name: Set WebStorm version
+  set_fact:
+    target_version: "2023.2.1"
+# TODO: nekako namesti webstorm
+#
+- name: Install WebStorm (not)
+  debug:
+    msg: "Do not install WebStorm since we do not have the licenses yet"
+  #win_package:
+  #  path: "https://download.jetbrains.com/idea/ideaIC-{{ target_version }}.exe"
+  #  arguments: /S
+  #  creates_path: "%ProgramFiles(x86)%\\JetBrains\\IntelliJ IDEA Community Edition {{ target_version }}\\bin\\idea64.exe"

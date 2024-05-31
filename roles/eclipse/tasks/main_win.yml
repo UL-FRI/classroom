@@ -1,0 +1,15 @@
+- name: Set Eclipse version
+  set_fact:
+    target_version: "4.28.0"
+
+- name: Install Eclipse
+  win_chocolatey:
+    name: eclipse
+    state: upgrade
+    version: "{{ target_version }}"
+
+- name: Set up default directories for Eclipse
+  win_lineinfile:
+    path: "%ProgramFiles%\\Eclipse {{ target_version }}\\eclipse\\eclipse.ini"
+    regexp: "osgi.instance.area.default"
+    line: "-Dosgi.instance.area.default=H:/Documents/eclipse-workspace"

@@ -1,0 +1,7 @@
+# Programiranje 2
+# Tomaz.Dobravec@fri.uni-lj.si
+# Windows, Java JDK, IntelliJ IDEA, Apache NetBeans
+dependencies:
+  - role: jdk
+  - role: idea
+  - role: netbeans

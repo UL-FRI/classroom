@@ -1,0 +1,7 @@
+- name: Install NodeJS
+  win_chocolatey:
+    name: nodejs
+
+- name: Install NodeJS-LTS
+  win_chocolatey:
+    name: nodejs-lts

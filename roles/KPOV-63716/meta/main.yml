@@ -1,0 +1,6 @@
+# Komunikacijski protokoli in omrežna varnost
+# Aleks.Huc@fri.uni-lj.si, Gasper.FeleZorz@fri.uni-lj.si
+# Windows, GNU/Linux, GNS3, VirtualBox
+dependencies:
+  - role: gns3
+  - role: virtualbox

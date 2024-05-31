@@ -1,0 +1,28 @@
+- name: Install Ninja
+  debug:
+    msg: "Do not install Ninja"
+
+- name: Check Ninja install status
+  win_stat:
+    path: "%ProgramFiles%\\Ninja-build\\ninja.exe"
+  register: file
+  
+- when: not file.stat.exists
+  block:
+    - name: Download Ninja-build
+      win_get_url:
+        url: https://github.com/ninja-build/ninja/releases/download/v1.11.1/ninja-linux.zip
+        dest: 'C:\'
+      register: download
+    
+    - name: Create Ninja-build directory
+      win_file:
+        path: "%ProgramFiles%\\Ninja-build"
+        state: directory
+
+    - name: Install Ninja-build
+      win_unzip:
+        src: "{{ download.dest }}"
+        dest: "%ProgramFiles%\\Ninja-build"
+        delete_archive: yes
+

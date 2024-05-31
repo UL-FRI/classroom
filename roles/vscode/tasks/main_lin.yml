@@ -1,0 +1,21 @@
+- name: Add VS repo key
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    keyring: /etc/apt/trusted.gpg.d/microsoft.gpg
+
+- name: Add VS repo url
+  apt_repository:
+    repo: "deb https://packages.microsoft.com/repos/vscode stable main"
+
+- name: Install VSCode
+  apt:
+    name: code
+    state: latest
+
+- name: Include VS code extension list
+  include_vars: vscode_extensions.yml
+
+- name: Install VS Code extensions
+  command: code --no-sandbox --user-data-dir "/usr/share/code/resources/app" --extensions-dir "/usr/share/code/resources/app/extensions" --install-extension "{{ item }}"
+  loop: "{{VSCode_Extensions}}"
+  notify: fix VS code extensions

@@ -1,0 +1,4 @@
+- name: Install Segger JLink
+  win_package:
+    path: https://www.segger.com/downloads/jlink/JLink_Windows_V792d_x86_64.exe
+    arguments: /S

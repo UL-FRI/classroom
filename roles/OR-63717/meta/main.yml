@@ -1,0 +1,11 @@
+# Organizacija računalnikov
+# Robert.Rozman@fri.uni-lj.si
+# Windows, Logisim, Logisim Evolution, RAVINOR, CubeIDE + QEMU Embedded plugin
+dependencies:
+  - role: logisim
+  - role: stm32cube
+  - role: stm32duino
+  - role: ninja
+  - role: cmake
+  - role: gcc-arm
+# TODO: RAVINOR, CubeIDE

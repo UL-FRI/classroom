@@ -1,0 +1,6 @@
+# Obdelava biomedicinskih signalov in slik
+# Ziga.Pirnar@fri.uni-lj.si
+# GNU/Linux, Matlab, wfdb
+dependencies:
+  - role: matlab
+  - role: wfdb

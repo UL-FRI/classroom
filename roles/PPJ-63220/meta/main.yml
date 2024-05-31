@@ -1,0 +1,11 @@
+# Principi programskih jezikov
+# Klemen.Klanjscek@fri.uni-lj.si
+# Windows, GNU/Linux, VS Code, Ocaml, Eclipse, Haskell, SWI-Prolog, rlwrap
+dependencies:
+  - role: vscode
+  - role: ocaml
+  - role: eclipse
+  - role: haskell
+  - role: swi-prolog
+  - role: rlwrap
+

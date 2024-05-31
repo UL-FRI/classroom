@@ -1,0 +1,6 @@
+# Spletne tehnologije
+# David.Jelenc@fri.uni-lj.si
+# Windows, VS Code, XAMPP
+dependencies:
+  - role: vscode
+  - role: xampp
