@@ -10,4 +10,5 @@ dependencies:
   - role: mysql_workbench
   - role: mysql-odbc-connector
   - role: notepad++
+  - role: pyOdbc
 
