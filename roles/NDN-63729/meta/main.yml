@@ -5,5 +5,6 @@
 # Miha.Moskon@fri.uni-lj.si
 # Windows, Vivado 2022.1
 dependencies:
+  - role: putty
   - role: vivado
   - role: cp210x-vcp-drivers-win10
