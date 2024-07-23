@@ -1,0 +1,4 @@
+- name: Do not install UnicleoGUI
+  debug:
+    msg: "Do not install UnicleoGUI on Linux"
+

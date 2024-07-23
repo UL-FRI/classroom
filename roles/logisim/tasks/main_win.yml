@@ -15,5 +15,5 @@
 
 - name: Install Logisim-Evolution
   win_package:
-    path: https://github.com/logisim-evolution/logisim-evolution/releases/download/v3.7.2/logisim-evolution-3.7.2.msi
-    product_id: b30fa00c-da3f-3769-aaea-6571cacf5c30
+    path: https://github.com/logisim-evolution/logisim-evolution/releases/download/v3.8.0/logisim-evolution-3.8.0-arm64.msi
+  # TODO  product_id: b30fa00c-da3f-3769-aaea-6571cacf5c30

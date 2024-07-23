@@ -1,9 +1,12 @@
 # Vhodno-izhodne naprave
 # Robert.Rozman@fri.uni-lj.si
-# Windows, Logisim Evolution, RAVINOR, WinIdea 9.12.256 (FRISMS kompatibilna), LTSpice
+# Windows, CubeIDE + Tools, LTSpice, PulseView, RAVINOR
 dependencies:
-  - role: logisim
-  - role: winidea-frisms
-  - role: winidea
+  - role: stm32cube
+  - role: stm32duino
+  - role: vscode
   - role: ltspice
+  - role: pulseview
+  - role: putty
+  - role: algobuilder
 

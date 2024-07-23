@@ -1,4 +1,5 @@
 # TODO check install status
+# TODO: Exe file is missing - Problem on ST site
 - name: Check AlgoBuilder install status
   win_stat:
     path: C:\Program Files (x86)\Thonny\thonny.exe

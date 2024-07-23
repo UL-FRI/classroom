@@ -5,4 +5,9 @@
 #    arguments: /S /AllUsers
 #    creates_path: "%ProgramFiles%\\Arduino IDE\\Arduino IDE.exe"
 
+# 2024: update: Full directory structure ready zip for Windows only on this URL:
+# https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EYTFhlsJOFtFk9xsaViP0eYBtILVS24ZF_dlkgodu_L9Nw?e=geavvJ
+
+
+
 # TODO check if anything else is needed (esp8266com)?
