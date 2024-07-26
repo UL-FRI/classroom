@@ -8,13 +8,13 @@
 - when: not file.stat.exists
   block:
     - name: Download AlgoBuilder
-      win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EZhqHxJoAfdEjdlMu0uGWGcBOqrT0vTVv2_nhynWZ3fOwQ?e=rcskhq&download=1" -O C:\AlgoBuilderSuite.exe
+      win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EdBQJN3I6fVFj7qgs6SjRp4BZ0QbWIV26NUlLv_4d9JsDQ?e=hA4Cbl&download=1" -O C:\AlgoBuilderSuite.exe
       args:  
         creates: C:\AlgoBuilderSuite.exe
       #win_get_url:
       #  follow_redirects: all
       #  http_agent: Wget/1.21.3
-      # url: https://unilj-my.sharepoint.com/:u:/r/personal/rozman_fri1_uni-lj_si/Documents/Arhiv/ImportantFiles/AlgoBuilderSuite.exe?download=1
+      # url: https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EdBQJN3I6fVFj7qgs6SjRp4BZ0QbWIV26NUlLv_4d9JsDQ?e=hA4Cbl?download=1
       #  dest: C:\AlgoBuilderSuite.exe
       #register: download
     
