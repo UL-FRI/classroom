@@ -7,17 +7,18 @@
   block:
     - name: Set download filenames
       set_fact:
-        cubemx_download_file: C:\CubeMX.exe
+    #    cubemx_download_file: C:\CubeMX.exe
         cubeprogrammer_download_file: C:\CubeProgrammer.exe
-        cufinder_download_file: C:\CUFinder.exe
-        cubeide_download_file: C:\st-stm32cubeide_1.13.1_17479_20230728_0839_x86_64.exe
-    - name: Download CubeMX
-      # win_get_url:
-      win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EZhqHxJoAfdEjdlMu0uGWGcBOqrT0vTVv2_nhynWZ3fOwQ?e=ilAlzP&download=1" -O "{{ cubemx_download_file }}"
-      #dest: C:\CubeMX.exe
-      #register: cubemx_download
-      args:
-        creates: "{{ cubemx_download_file }}"
+        cubemonitor_download_file: C:\CubeMonitor.exe
+    #    cufinder_download_file: C:\CUFinder.exe
+        cubeide_download_file: C:\st-stm32cubeide_1.16.0_21983_20240628_1741_x86_64.exe
+    # - name: Download CubeMX
+    #   # win_get_url:
+    #   win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EZhqHxJoAfdEjdlMu0uGWGcBOqrT0vTVv2_nhynWZ3fOwQ?e=ilAlzP&download=1" -O "{{ cubemx_download_file }}"
+    #   #dest: C:\CubeMX.exe
+    #   #register: cubemx_download
+    #   args:
+    #     creates: "{{ cubemx_download_file }}"
 
 #    - name: Install CubeMX
 #      win_package:
@@ -26,25 +27,41 @@
 #        arguments: /S
 
     - name: Download CubeProgrammer
-      win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EVXiui8gFQ1ClgLmaLb2Pn8BmSUK7OLmPapvKQ6JTCXcZQ?e=OUWTDK&download=1" -O "{{ cubeprogrammer_download_file }}"
+      win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EXHsKDjM6hVAuEGwEWcMyBEB6bHd3HuOP38D7Wjt41vjTw?e=7jatnu&download=1" -O "{{ cubeprogrammer_download_file }}"
       #win_get_url:
       #  dest: C:\CubeProgrammer.exe
       #register: cubeprogrammer_download
       args:
         creates: "{{ cubeprogrammer_download_file }}"
 
-#    - name: Install CubeProgrammer
-#      win_package:
-#        path: "{{ cubeprogrammer_download_file }}"
-#        arguments: /S
+    # - name: Install CubeProgrammer
+    #   win_package:
+    #     path: "{{ cubeprogrammer_download_file }}"
+    #     arguments: /S
 
-    - name: Download STM CUFinder
-      win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EfesbSW7EftDoSjtt-nr_eYBH_EBzXnysW0Lk1wnNzx2Mw?e=HSSmDz&download=1" -O "{{ cufinder_download_file }}"
+    - name: Download CubeMonitor
+    # TODO 2024: only zip distributions exists in zip file
+    # TODO 2024: URL: https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/ERUUr7knYFNNuv5rViOb-PgB596EvC3ev4P_Aa_MjRL57Q?e=tZssk4
+    # TODO 2024: Have extracted setup exe - not sure if this is enough!
+      win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EQnm_b359Q5IpmfCUuDG-PABH10q94ixaLx4_CMrYKoNtQ?e=rKp3cV&download=1" -O "{{ cubemonitor_download_file }}"
       #win_get_url:
-      #  dest: C:\CUFinder.exe
-      #register: cubecufinder_download
+      #  dest: C:\CubeMonitor.exe
+      #register: cubemonitor_download
       args:
-        creates: "{{ cufinder_download_file }}"
+        creates: "{{ cubemonitor_download_file}}"
+
+    # - name: Install CubeMonitor
+    #   win_package:
+    #     path: "{{ cubemonitor_download_file }}"
+    #     arguments: /S
+
+    # - name: Download STM CUFinder
+    #   win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EfesbSW7EftDoSjtt-nr_eYBH_EBzXnysW0Lk1wnNzx2Mw?e=HSSmDz&download=1" -O "{{ cufinder_download_file }}"
+    #   #win_get_url:
+    #   #  dest: C:\CUFinder.exe
+    #   #register: cubecufinder_download
+    #   args:
+    #     creates: "{{ cufinder_download_file }}"
 
 #    - name: Install STM CUFinder
 #      win_package:
@@ -53,8 +70,8 @@
 
     - name: Download CubeIDE
       # win_get_url:
-      win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EegJD8ol6BNBkKCc-wVEImEB6GnjmjEZFqAAWScDLDgUlw?e=BcxukR&download=1" -O "{{ cubeide_download_file }}"
-      #dest: C:\st-stm32cubeide_1.13.1_17479_20230728_0839_x86_64.exe
+      win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/ERpqeASbQ2hDrL9ANNWJf5QBJNhHieXoqaNtduppk42qwg?e=zI8rjI&download=1" -O "{{ cubeide_download_file }}"
+      #dest: C:\st-stm32cubeide_1.16.0_21983_20240628_1741_x86_64.exe
       #register: cubeide_download
       args:
         creates: "{{ cubeide_download_file }}"

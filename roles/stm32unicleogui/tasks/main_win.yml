@@ -1,0 +1,31 @@
+# TODO check install status
+- name: Check UnicleoGUI install status
+  win_stat:
+    path: C:\Program Files (x86)\STMicroelectronics\Unicleo-GUI\Unicleo-GUI.exe
+  register: file
+- when: not file.stat.exists
+  block:
+    - name: Download UnicleoGUI
+      win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EQG4vStF7ApBsN2TDm5AjGQBiU0iFbZZiz91UqGeHKX9FA?e=QOQky2&download=1" -O C:\Unicleo-GUI_Setup.exe
+      args:  
+        creates: C:\Unicleo-GUI_Setup.exe
+      #win_get_url:
+      #  follow_redirects: all
+      #  http_agent: Wget/1.21.3
+      # url: https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EQG4vStF7ApBsN2TDm5AjGQBiU0iFbZZiz91UqGeHKX9FA?e=QOQky2?download=1
+      #  dest: C:\Unicleo-GUI_Setup.exe
+      #register: download
+    
+    - name: Install UnicleoGUI
+      win_package:
+        path: C:\Unicleo-GUI_Setup.exe
+        # path: "{{ download.dest }}"
+        arguments: /Verysilent /AllUsers
+    
+    - name: Remove temporary files
+      win_file:
+        path: C:\Unicleo-GUI_Setup.exe
+        # path: "{{ download.dest }}"
+        state: absent
+
+

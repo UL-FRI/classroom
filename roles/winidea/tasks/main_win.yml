@@ -7,7 +7,7 @@
   block:
     - name: Install WinIDEA
       win_package:
-        path: "https://www.isystem.com/downloads/winIDEA/setup/winIDEA(x64)9_21_110_138559.exe"
+        path: "https://www.isystem.com/downloads/winIDEA/setup/winIDEA_x64_9_21_253_178621.exe"
         arguments: /q
 
     - name: Download QEMU
