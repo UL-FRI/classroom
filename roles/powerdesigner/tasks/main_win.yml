@@ -1,4 +1,4 @@
 - name: Install PowerDesigner
   win_package:
     path: "{{ installers }}\\PowerDesigner 12.5\\cd1\\setup\\setup.exe"
-    arguments: "/s /f1\"{{ installers }}\\PowerDesigner 12.5\\setup.iss\" /f2\"C:\powerdesigner_log.iss\""
+    arguments: "/s /f1\"{{ installers }}\\PowerDesigner 12.5\\setup.iss\" /f2\"C:\\powerdesigner_log.iss\""
