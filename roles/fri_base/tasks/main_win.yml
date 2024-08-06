@@ -10,6 +10,8 @@
 - name: Install PSCX
   community.windows.win_psmodule:
     name: Pscx
+    accept_license: true
+    allow_clobber: true
     state: present
 
 # TODO: turn on GPO to allow guest SMB logins
