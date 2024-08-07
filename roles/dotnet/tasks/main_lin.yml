@@ -1,0 +1,4 @@
+- name: "Install Dotnet 8.0"
+  apt:
+    name: dotnet8
+    state: latest

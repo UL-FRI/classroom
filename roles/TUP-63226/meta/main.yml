@@ -3,7 +3,7 @@
 # Windows, Power designer 12.5, Java JDK, Python 3, dotnet6 SDK, Jupyter Notebook, Eclipse, MySql Workbench, MySQL ODBC Connector, Notepad++
 dependencies:
   - role: eclipse
-  - role: dotnet6
+  - role: dotnet
   - role: jupyter
   - role: jdk
   - role: powerdesigner
