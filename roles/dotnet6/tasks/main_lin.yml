@@ -1,4 +1,0 @@
-- name: "Install Dotnet 6.0"
-  apt:
-    name: dotnet6
-    state: latest
