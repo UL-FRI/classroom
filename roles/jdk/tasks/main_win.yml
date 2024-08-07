@@ -35,16 +35,14 @@
     type: dword
     data: 0
 
-#- name: Download Java documentation
-# TODO: download Java doc
 - name: Download Java doc
   win_get_url:
-    path: "{{ reg['raw_value'] }}"
+    dest: "{{ reg['raw_value'] }}"
     url: https://download.oracle.com/otn_software/java/jdk/22.0.2+9/c9ecb94cd31b495da20a27d4581645e8/jdk-22.0.2_doc-all.zip
-    register: downloaded_docs
+  register: downloaded_docs
 
 - name: Unpack Java docs
   win_unzip:
-    path: "{{ downloaded_docs }}"
-    dest: "{{ reg['raw_value'] }}\\docs"
+    src: "{{ downloaded_docs['dest'] }}"
+    dest: "{{ reg['raw_value'] }}"
     delete_archive: yes
