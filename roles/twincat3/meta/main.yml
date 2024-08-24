@@ -1,0 +1,4 @@
+# dependencies:
+#   - role: fri_base
+dependencies:
+  - role: visualstudio19

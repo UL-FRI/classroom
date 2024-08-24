@@ -2,4 +2,4 @@
 # Nejc.Ilc@fri.uni-lj.si
 # Windows, VMware Workstation 16.2.4 Player
 dependencies:
-  - role: vmware_player
+  - role: twincat3

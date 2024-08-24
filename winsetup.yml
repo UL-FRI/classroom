@@ -1,6 +1,7 @@
 - hosts: classroom
   become: true
   become_method: runas
+  debugger: on_failed
   vars:
     ansible_connection: winrm
     ansible_winrm_transport: ntlm
@@ -8,6 +9,15 @@
     ansible_port: 5985
     logon_type: interactive
     installers: \\ucilnicesmb.fri1.uni-lj.si\ucilnice_d\install
+  vars_files:
+    - vars/credentials.yml
+    - vars/software_keys.yml
   roles:
-    - all_classes
+    # - fri_base
+    - matlab
+    # - all_classes
+    # - android_studio
+    # - octave
+    # - audacity
+    # - vmware_player
 

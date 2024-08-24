@@ -3,4 +3,4 @@
 # Windows, VMware Workstation 16.2.4 Player, wireshark
 dependencies:
   - role: wireshark
-  - role: vmware_player
+  - role: virtualbox

@@ -1,0 +1,5 @@
+- name: Install TwinCat 3
+  win_chocolatey:
+    name: visualstudio2019community
+
+# Maybe sometime use https://learn.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio?view=vs-2022 with the costlier version
