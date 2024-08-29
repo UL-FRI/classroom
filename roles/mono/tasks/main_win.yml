@@ -1,0 +1,3 @@
+- name: Do not install Mono
+  debug:
+    msg: "Do not install Mono"
