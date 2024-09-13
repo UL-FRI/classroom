@@ -1,9 +1,10 @@
-- name: Install SageMath
-  apt:
-    name: sagemath
-    state: latest
+# # SageMath se se prevede za Ubutnu 24.04: https://github.com/sagemath/sage/issues/38051#issuecomment-2123452861
+# - name: Install SageMath
+#   apt:
+#     name: sagemath
+#     state: latest
 
-- name: Install SageMath - Jupyter
-  apt:
-    name: sagemath-jupyter
-    state: latest
+# - name: Install SageMath - Jupyter
+#   apt:
+#     name: sagemath-jupyter
+#     state: latest
