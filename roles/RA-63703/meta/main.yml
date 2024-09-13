@@ -1,8 +1,8 @@
 # Računalniška arhitektura
 # Ziga.Pusnik@fri.uni-lj.si, Robert.Rozman@fri.uni-lj.si
-# Windows, RAVINOR, CubeIDE + tools, STMDuino, WinIdea 9.21 + GCC + QEMU, Visual2
+# Windows, CubeIDE + tools, STMDuino, VSCode, WinIdea 9.21 + GCC + QEMU, Visual2
 dependencies:
-  - role: stm32cube
+  - role: stm32cube    (CubeMonitor sem vzel samo exe)
   - role: stm32duino
   - role: vscode
   - role: winidea
@@ -10,5 +10,6 @@ dependencies:
   - role: git
   - role: visual2
 
+#TODO Writable d:\RAVINOR directory
 
 

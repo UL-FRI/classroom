@@ -1,6 +1,6 @@
 # Vhodno-izhodne naprave
 # Robert.Rozman@fri.uni-lj.si
-# Windows, CubeIDE + Tools, LTSpice, PulseView, RAVINOR
+# Windows, CubeIDE + Tools, STMDuino, VSCode, LTSpice, PulseView,Putty, STM32 Algobuilder & Unicleo GUI
 dependencies:
   - role: stm32cube
   - role: stm32duino
@@ -8,5 +8,7 @@ dependencies:
   - role: ltspice
   - role: pulseview
   - role: putty
-  - role: algobuilder
-
+  - role: stm32algobuilder   #(ni še exe. Datoteke - ne dobim iz ST portala)
+  - role: stm32unicleogui
+  
+#TODO Writable d:\RAVINOR directory

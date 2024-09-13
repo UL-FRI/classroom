@@ -1,3 +1,9 @@
 # TODO 
 # Win: https://ltspice.analog.com/software/LTspice64.msi
 # MAC: https://ltspice.analog.com/software/LTspice.pkg
+
+- name: Install LTSpice
+  win_package:
+    path: https://ltspice.analog.com/software/LTspice64.msi
+  
+  # TODO  
