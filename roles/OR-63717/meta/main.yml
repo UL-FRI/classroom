@@ -11,3 +11,23 @@ dependencies:
 
 #TODO Writable d:\RAVINOR directory
 
+- name: Create RAVINOR directory
+  win_file:
+    path: "D:\\RAVINOR"
+    state: directory
+
+- name: Create RAVINOR CubeIDE_Workspace directory
+  win_file:
+    path: "D:\\RAVINOR\\CubeIDE_Workspace"
+    state: directory
+
+- name: Create RAVINOR Delo directory
+  win_file:
+    path: "D:\\RAVINOR\\Delo"
+    state: directory
+
+- name: Create RAVINOR Logisim directory
+  win_file:
+    path: "D:\\RAVINOR\\Logisim"
+    state: directory
+
