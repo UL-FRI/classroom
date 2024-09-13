@@ -1,0 +1,2 @@
+- name: Do not install VisualStudio on Linux
+  debug: Do not install VisualStudio on Linux

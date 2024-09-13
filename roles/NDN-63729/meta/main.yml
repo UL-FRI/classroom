@@ -7,4 +7,4 @@
 dependencies:
   - role: putty
   - role: vivado
-  - role: cp210x-vcp-drivers-win10
+  - role: cp2102_driver

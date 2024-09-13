@@ -4,7 +4,7 @@
 dependencies:
   - role: docker
   - role: vscode
-  - role: dotnet6
+  - role: dotnet
   - role: git
   - role: android_studio
 

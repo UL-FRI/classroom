@@ -1,12 +1,12 @@
 - name: Set Matlab version and destination
   set_fact:
-    target_version: "r2023b"
+    target_version: "R2024a_Update_5"
     license_path: \\ucilnicesmb.fri1.uni-lj.si\ucilnice_d\install\matlab\network.lic
     dest_dir: D:\matlab
 
 - name: Mount Matlab ISO
   win_disk_image:
-    image_path: "{{ installers }}\\matlab\\matlab-{{ target_version }}_windows.iso"
+    image_path: "{{ installers }}\\matlab\\{{ target_version }}_Windows.iso"
     state: present
   register: disk_image
 

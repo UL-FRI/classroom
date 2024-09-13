@@ -1,6 +1,6 @@
 - name: Set Matlab version and destination
   set_fact:
-    target_version: "R2023b"
+    target_version: "R2024a_Update_5"
     install_dir: "/mnt/ucilnice_d/install/matlab/"
     license_path: "/mnt/ucilnice_d/install/matlab/network.lic"
     dest_dir: /opt/matlab
