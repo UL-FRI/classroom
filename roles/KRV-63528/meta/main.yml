@@ -1,7 +1,8 @@
 # Kriptografija in računalniška varnost
-# Klemen.Klanjscek@fri.uni-lj.si, Janos.Vidali@fri.uni-lj.si
+# Klemen.Klanjscek@fri.uni-lj.si
 # GNU/Linux, SageMath, Python 3, Jupyter Notebook, OpenSSL, OpenSSH client
-dependencies:
-  - role: sagemath
-  - role: jupyter
-  - role: openssl
+
+# SageMath se se prevede za Ubutnu 24.04: https://github.com/sagemath/sage/issues/38051#issuecomment-2123452861
+# - include_tasks: sagemath.yml
+- include_tasks: jupyter.yml
+- include_tasks: openssl.yml
