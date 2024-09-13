@@ -10,7 +10,7 @@ VSCode_Extensions:
   - franneck94.c-cpp-runner
   - ritwickdey.LiveServer
   - ms-toolsai.jupyter
-  - vscodevim.vim
+  # - vscodevim.vim
   - ocamllabs.ocaml-platform
   - stonebuddha.vscode-better-sml
   - vscode-icons-team.vscode-icons
