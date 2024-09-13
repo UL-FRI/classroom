@@ -1,9 +1,7 @@
 VSCode_Extensions:
   - VisualStudioExptTeam.vscodeintellicode
-  - arthurwang.vsc-prolog
-  - dramforever.vscode-ghc-simple
+  - AmauryRabouan.new-vsc-prolog
   - eamodio.gitlens
-  - justusadam.language-haskell
   - ms-dotnettools.csdevkit # IS-63714
   - ms-python.python
   - ms-vscode.cpptools

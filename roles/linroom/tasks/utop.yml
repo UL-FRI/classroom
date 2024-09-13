@@ -1,0 +1,4 @@
+- name: Install utop
+  apt:
+    name: utop
+    state: latest
