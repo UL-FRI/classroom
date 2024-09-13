@@ -31,7 +31,6 @@
 - import_tasks: PB-63707.yml
 - import_tasks: PB2-63713.yml
 - import_tasks: PJC-63769.yml
-- import_tasks: PPJ-63220.yml
 - import_tasks: PS-63261.yml
 - import_tasks: PSP-63287.yml
 - import_tasks: PUI-63768.yml
