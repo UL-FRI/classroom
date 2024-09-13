@@ -1,4 +1,0 @@
-- name: GNS3 na Windows ne deluje
-  debug:
-    msg: "GNS3 na Windows zaenkrat ne vklapljamo"
-
