@@ -1,3 +1,6 @@
+- name: Enable multiarch
+  command: dpkg --add-architecture i386
+
 - name: Install generally useful packages
   apt:
     name:
@@ -16,11 +19,13 @@
       - qutebrowser
       - chromium-browser
       - firefox
-      - qemu
+      - qemu-system-x86
       - qemu-kvm
       - qemu-utils
       - virt-manager
-      - wine-development
+      - wine
+      - wine32:i386
+      - wine-binfmt
       - dosbox
       - webext-ublock-origin-chromium
       - webext-ublock-origin-firefox
@@ -38,6 +43,9 @@
       - overlayroot
       - nfs-common
       - cifs-utils
+      - samba-vfs-modules-extra
+      - samba-vfs-modules
+      - smbclient
       - neovim-qt
       - binwalk
       - iotop
@@ -110,7 +118,7 @@
   mount:
     boot: true
     fstype: nfs
-    src: "10.32.254.16:/srv/nfs/clonezilla_images"
+    src: "ucilnicenfs.fri.uni-lj.si:/srv/nfs/clonezilla_images"
     path: /home/partimag
     state: mounted
     opts: defaults,nofail

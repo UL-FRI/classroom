@@ -1,0 +1,8 @@
+# Programiranje 1
+# luka.furst@fri.uni-lj.si
+# JDK, mono
+dependencies:
+  - role: jdk
+  - role: gedit
+  - role: mono
+  - role: vscode

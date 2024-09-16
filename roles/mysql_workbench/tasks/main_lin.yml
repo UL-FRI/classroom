@@ -1,8 +1,8 @@
 - name: Download mysql workbench
   get_url:
-    url: https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb
-    dest: /tmp/mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb
+    url: https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community_8.0.38-1ubuntu24.04_amd64.deb
+    dest: /tmp/mysql-workbench-community_8.0.38-1ubuntu24.04_amd64.deb
     http_agent: "Wget/1.21.3"
 - name: Install mysql workbench
   apt:
-    deb: /tmp/mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb
+    deb: /tmp/mysql-workbench-community_8.0.38-1ubuntu24.04_amd64.deb

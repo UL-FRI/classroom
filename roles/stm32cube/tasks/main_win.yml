@@ -7,24 +7,23 @@
   block:
     - name: Set download filenames
       set_fact:
-    #    cubemx_download_file: C:\CubeMX.exe
+        cubemx_download_file: C:\CubeMX.exe
         cubeprogrammer_download_file: C:\CubeProgrammer.exe
         cubemonitor_download_file: C:\CubeMonitor.exe
-    #    cufinder_download_file: C:\CUFinder.exe
+        cufinder_download_file: C:\CUFinder.exe
         cubeide_download_file: C:\st-stm32cubeide_1.16.0_21983_20240628_1741_x86_64.exe
-    # - name: Download CubeMX
+    - name: Download CubeMX
     #   # win_get_url:
-    #   win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EZhqHxJoAfdEjdlMu0uGWGcBOqrT0vTVv2_nhynWZ3fOwQ?e=ilAlzP&download=1" -O "{{ cubemx_download_file }}"
+      win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EZhqHxJoAfdEjdlMu0uGWGcBOqrT0vTVv2_nhynWZ3fOwQ?e=ilAlzP&download=1" -O "{{ cubemx_download_file }}"
     #   #dest: C:\CubeMX.exe
     #   #register: cubemx_download
-    #   args:
-    #     creates: "{{ cubemx_download_file }}"
+      args:
+        creates: "{{ cubemx_download_file }}"
 
-#    - name: Install CubeMX
-#      win_package:
-        # path: "{{cubemx_download.dest}}"
-#        path: "{{ cubemx_download_file }}"
-#        arguments: /S
+    #- name: Install CubeMX
+    #  win_package:
+    #    path: "{{ cubemx_download_file }}"
+    #    arguments: /S
 
     - name: Download CubeProgrammer
       win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EXHsKDjM6hVAuEGwEWcMyBEB6bHd3HuOP38D7Wjt41vjTw?e=7jatnu&download=1" -O "{{ cubeprogrammer_download_file }}"
@@ -34,10 +33,10 @@
       args:
         creates: "{{ cubeprogrammer_download_file }}"
 
-    # - name: Install CubeProgrammer
-    #   win_package:
-    #     path: "{{ cubeprogrammer_download_file }}"
-    #     arguments: /S
+    - name: Install CubeProgrammer
+      win_package:
+        path: "{{ cubeprogrammer_download_file }}"
+        arguments: /S
 
     - name: Download CubeMonitor
     # TODO 2024: only zip distributions exists in zip file
@@ -50,23 +49,23 @@
       args:
         creates: "{{ cubemonitor_download_file}}"
 
-    # - name: Install CubeMonitor
-    #   win_package:
-    #     path: "{{ cubemonitor_download_file }}"
-    #     arguments: /S
+    - name: Install CubeMonitor
+      win_package:
+        path: "{{ cubemonitor_download_file }}"
+        arguments: /S
 
-    # - name: Download STM CUFinder
-    #   win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EfesbSW7EftDoSjtt-nr_eYBH_EBzXnysW0Lk1wnNzx2Mw?e=HSSmDz&download=1" -O "{{ cufinder_download_file }}"
+    - name: Download STM CUFinder
+      win_command: wget "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EfesbSW7EftDoSjtt-nr_eYBH_EBzXnysW0Lk1wnNzx2Mw?e=HSSmDz&download=1" -O "{{ cufinder_download_file }}"
     #   #win_get_url:
     #   #  dest: C:\CUFinder.exe
     #   #register: cubecufinder_download
-    #   args:
-    #     creates: "{{ cufinder_download_file }}"
+      args:
+        creates: "{{ cufinder_download_file }}"
 
-#    - name: Install STM CUFinder
-#      win_package:
-#        path: "{{ cubecufinder_download_file }}"
-#        arguments: /S
+    - name: Install STM CUFinder
+      win_package:
+        path: "{{ cubecufinder_download_file }}"
+        arguments: /S
 
     - name: Download CubeIDE
       # win_get_url:
@@ -76,20 +75,20 @@
       args:
         creates: "{{ cubeide_download_file }}"
 
-#    - name: Install CubeIDE
-#      win_package:
-#        path: "{{ cubeide_download_file }}"
-#        arguments: /S
+    - name: Install CubeIDE
+      win_package:
+        path: "{{ cubeide_download_file }}"
+        arguments: /S
 # TODO test the installers
  
-#    - name: Set CubeIDE default workspace
-#      win_lineinfile:
-#        path: C:\ST\STM32CubeIDE_1.10.1\STM32CubeIDE\stm32cubeide.ini
-#        regexp: "osgi.instance.area.default"
-#        line: "-Dosgi.instance.area.default=D:/RAVINOR/CubeIDE_Workspace"
+    - name: Set CubeIDE default workspace
+      win_lineinfile:
+        path: C:\ST\STM32CubeIDE_1.10.1\STM32CubeIDE\stm32cubeide.ini
+        regexp: "osgi.instance.area.default"
+        line: "-Dosgi.instance.area.default=D:/RAVINOR/CubeIDE_Workspace"
 
     # Replace -installIU... with -list to get available packages.
-#    - name: Install QEMU
-#      win_command: stm32cubeidec.exe -application org.eclipse.equinox.p2.director -nosplash -repository https://download.eclipse.org/embed-cdt/updates/v6/ -installIU org.eclipse.embedcdt.debug.gdbjtag.qemu.feature.group
-#      args:
-#        chdir: C:\ST\STM32CubeIDE_1.10.1\STM32CubeIDE
+    - name: Install QEMU
+      win_command: stm32cubeidec.exe -application org.eclipse.equinox.p2.director -nosplash -repository https://download.eclipse.org/embed-cdt/updates/v6/ -installIU org.eclipse.embedcdt.debug.gdbjtag.qemu.feature.group
+      args:
+        chdir: C:\ST\STM32CubeIDE_1.10.1\STM32CubeIDE

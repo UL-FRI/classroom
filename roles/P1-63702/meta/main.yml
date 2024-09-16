@@ -1,0 +1,7 @@
+# Programiranje 1
+# tomaz.hocevar@fri.uni-lj.si
+# vscode, gcc, g++
+dependencies:
+  - role: gedit
+  - role: vscode
+  - role: c_development

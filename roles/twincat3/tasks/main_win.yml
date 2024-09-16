@@ -1,5 +1,6 @@
 - name: Install TwinCat 3
-  win_chocolatey:
-    name: visualstudio2019community
-
-# Maybe sometime use https://learn.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio?view=vs-2022 with the costlier version
+  debug:
+    msg: TODO - write twincat installer scripts
+  #win_package:
+  #  path: "{{ installers }}\\TwinCat3\\setup\\setup.exe"
+  #  arguments: "/s /f1\"{{ installers }}\\PowerDesigner 12.5\\setup.iss\" /f2\"C:\\powerdesigner_log.iss\""

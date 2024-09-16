@@ -13,7 +13,6 @@
 - import_tasks: IVZ-63521.yml
 - import_tasks: KCR-63550.yml
 - import_tasks: KPOV-63716.yml
-- import_tasks: KRV-63528.yml
 - import_tasks: MRO-63257.yml
 - import_tasks: MV-63288.yml
 - import_tasks: NDN-63729.yml
@@ -32,7 +31,6 @@
 - import_tasks: PB-63707.yml
 - import_tasks: PB2-63713.yml
 - import_tasks: PJC-63769.yml
-- import_tasks: PPJ-63220.yml
 - import_tasks: PS-63261.yml
 - import_tasks: PSP-63287.yml
 - import_tasks: PUI-63768.yml

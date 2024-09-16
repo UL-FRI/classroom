@@ -1,4 +1,4 @@
 - name: Install TensorFlow
   pip:
-    executable: pip3
+    executable: pipx
     name: tensorflow

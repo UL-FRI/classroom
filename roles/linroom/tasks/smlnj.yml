@@ -11,3 +11,8 @@
     name: elpa-sml-mode
     state: latest
 
+# - name: Readline for SML
+#   lineinfile:
+#     dest: "$HOME/.bashrc"
+#     line: "alias smlnj='rlwrap sml'"
+#     insertafter: EOF

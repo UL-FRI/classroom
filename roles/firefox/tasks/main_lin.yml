@@ -20,3 +20,4 @@
     name:
       - firefox
     state: latest
+    allow_downgrade: True

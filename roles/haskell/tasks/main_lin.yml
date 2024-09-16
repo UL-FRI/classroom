@@ -1,6 +1,6 @@
-- name: install Haskell platform
+- name: install Emacs haskell mode
   apt:
-    name: haskell-platform
+    name: elpa-haskell-mode
     state: latest
 
 - name: install Haskell Tool Stack
