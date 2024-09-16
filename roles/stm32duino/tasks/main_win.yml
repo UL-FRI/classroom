@@ -8,6 +8,16 @@
 # 2024: update: Full directory structure ready zip for Windows only on this URL:
 # https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EYTFhlsJOFtFk9xsaViP0eYBtILVS24ZF_dlkgodu_L9Nw?e=geavvJ
 
+- name: Create STM32Duino directory
+  win_file:
+    path: "D:\\RAVINOR\\STM32Duino"
+    state: directory
+
+- name: Install Logisim
+  win_get_url:
+    url: "https://unilj-my.sharepoint.com/:u:/g/personal/rozman_fri1_uni-lj_si/EYTFhlsJOFtFk9xsaViP0eYBtILVS24ZF_dlkgodu_L9Nw?e=geavvJ"
+    dest: "D:\\RAVINOR\\STM32Duino"
+    # TODO Don't know if unzipping is required?
 
 
 # TODO check if anything else is needed (esp8266com)?
