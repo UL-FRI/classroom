@@ -1,16 +1,14 @@
 VSCode_Extensions:
   - VisualStudioExptTeam.vscodeintellicode
-  - arthurwang.vsc-prolog
-  - dramforever.vscode-ghc-simple
+  - AmauryRabouan.new-vsc-prolog
   - eamodio.gitlens
-  - justusadam.language-haskell
   - ms-dotnettools.csdevkit # IS-63714
   - ms-python.python
   - ms-vscode.cpptools
   - franneck94.c-cpp-runner
   - ritwickdey.LiveServer
   - ms-toolsai.jupyter
-  - vscodevim.vim
+  # - vscodevim.vim
   - ocamllabs.ocaml-platform
   - stonebuddha.vscode-better-sml
   - vscode-icons-team.vscode-icons
@@ -22,4 +20,4 @@ VSCode_Extensions:
   - platformio.platformio-ide # ORS-63218
   - stmicroelectronics.stm32-vscode-extension # RA-63703
   - danielpinto8zz6.c-cpp-compile-run
-  - vadimcn.vscode-lldb
+  # - vadimcn.vscode-lldb

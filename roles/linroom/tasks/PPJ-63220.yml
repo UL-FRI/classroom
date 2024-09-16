@@ -5,7 +5,7 @@
 - include_tasks: vscode.yml
 - include_tasks: ocaml.yml
 - include_tasks: eclipse.yml
-- include_tasks: haskell.yml
 - include_tasks: swi-prolog.yml
 - include_tasks: rlwrap.yml
+- include_tasks: utop.yml
 

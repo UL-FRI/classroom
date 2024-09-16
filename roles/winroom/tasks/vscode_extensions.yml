@@ -1,13 +1,9 @@
 VSCode_Extensions:
   - VisualStudioExptTeam.vscodeintellicode
-  - arthurwang.vsc-prolog
-  - dramforever.vscode-ghc-simple
   - eamodio.gitlens
-  - justusadam.language-haskell
   - ms-dotnettools.csdevkit # IS-63714
   - ms-python.python
   - ms-vscode.cpptools
-  - ocamllabs.ocaml-platform
   - stonebuddha.vscode-better-sml
   - vscode-icons-team.vscode-icons
   - vscjava.vscode-java-pack
