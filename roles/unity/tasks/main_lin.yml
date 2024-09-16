@@ -2,11 +2,11 @@
 - name: PowerDesigner
   debug:
     msg: "Unity"
-- name: Install Wine
-  apt:
-    name: wine-development
-    state: latest
-- name: Install Wine binfmt support
-  apt:
-    name: wine-binfmt
-    state: latest
+#- name: Install Wine
+#  apt:
+#    name: wine-development
+#    state: latest
+#- name: Install Wine binfmt support
+#  apt:
+#    name: wine-binfmt
+#    state: latest

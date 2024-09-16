@@ -1,4 +1,8 @@
+- name: Install pipx
+  apt:
+    name: pipx
+    state: latest
 - name: Install orange
   pip:
-    executable: pip3
+    executable: pipx
     name: orange3

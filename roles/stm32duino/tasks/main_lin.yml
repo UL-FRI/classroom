@@ -1,13 +1,14 @@
-- name: create destination
-  file:
-    path: /opt/Arduino
-    state: directory
+#- name: create destination
+#  file:
+#    path: /opt/Arduino
+#    state: directory
 
-- name: unpack Arduino
-  unarchive:
-    src: 
-    dest: /opt/Arduino-cli
-    remote_src: yes
+# - name: unpack Arduino
+#  unarchive:
+#    src: 
+#    dest: /opt/Arduino-cli
+#    remote_src: yes
 
 #- name: Add .json for new boards
-# 
+# https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json
+# TODO: write this task file!

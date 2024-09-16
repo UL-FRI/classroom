@@ -5,6 +5,7 @@ dependencies:
   - role: stm32cube
   - role: stm32duino
   - role: vscode
+  - role: putty
   - role: winidea
   - role: gcc-arm
   - role: git

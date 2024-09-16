@@ -3,14 +3,14 @@
 - name: Install notepad++
   debug:
     msg: "Install Notepad++"
-- name: Install Wine
-  apt:
-    name: wine-development
-    state: latest
-- name: Install Wine binfmt support
-  apt:
-    name: wine-binfmt
-    state: latest
+#- name: Install Wine
+#  apt:
+#    name: wine-development
+#    state: latest
+#- name: Install Wine binfmt support
+#  apt:
+#    name: wine-binfmt
+#    state: latest
 
 - name: Create dir
   file:

@@ -5,6 +5,7 @@ dependencies:
   - role: logisim
   - role: stm32cube
   - role: stm32duino
+  - role: putty
   - role: ninja
   - role: cmake
   - role: gcc-arm

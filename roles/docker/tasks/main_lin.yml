@@ -11,12 +11,12 @@
 
 - name: "Install docker"
   apt:
-    name: docker
+    name: docker.io
     state: latest
 
 - name: "Install docker-compose"
   apt:
-    name: docker-compose
+    name: docker-compose-v2
     state: latest
 
 

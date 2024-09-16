@@ -6,5 +6,9 @@
     vtype: boolean
 - name: "Install Wireshark"
   apt:
-    name: wireshark-qt
+    name: wireshark
+    state: latest
+- name: "Install text-mode wireshark"
+  apt:
+    name: tshark
     state: latest

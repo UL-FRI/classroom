@@ -1,3 +1,4 @@
 - name: Install CP210x USB to UART Bridge VCP Drivers
   win_chocolatey:
+    ignore_checksums: true
     name: cp210x-vcp-drivers-win10

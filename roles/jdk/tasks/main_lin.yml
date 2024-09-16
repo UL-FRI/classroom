@@ -1,11 +1,11 @@
-- name: Install OpenJDK 18
+- name: Install OpenJDK 21
   apt:
-    name: openjdk-18-jdk
+    name: openjdk-21-jdk
     state: latest
 
-- name: Install OpenJDK 19
+- name: Install OpenJDK 17
   apt:
-    name: openjdk-19-jdk
+    name: openjdk-17-jdk
     state: latest
 
 - name: Install OpenJDK 11
@@ -31,11 +31,11 @@
       - libc6-x32
     state: latest
 
-- name: Install Oracle JDK 20
+- name: Install Oracle JDK 22
   apt: 
-    deb: "https://download.oracle.com/java/20/latest/jdk-20_linux-x64_bin.deb"
+    deb: "https://download.oracle.com/java/22/latest/jdk-22_linux-x64_bin.deb"
 
 - name: Install Java docs
   apt: 
-    deb: "https://download.oracle.com/java/20/latest/jdk-20_linux-x64_bin.deb"
+    deb: "https://download.oracle.com/java/22/latest/jdk-22_linux-x64_bin.deb"
 

@@ -1,6 +1,6 @@
 - name: Set Netbeans version
   set_fact:
-    target_version: "19"
+    target_version: "22"
 
 - name: Install Netbeans
   win_package:

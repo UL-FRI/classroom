@@ -7,6 +7,7 @@
       state: directory
   - name: Download and unpack Logisim
     unarchive:
-      src: https://altushost-swe.dl.sourceforge.net/project/circuit/2.7.x/2.7.1/logisim-generic-2.7.1.jar
+      src: https://deac-fra.dl.sourceforge.net/project/circuit/2.7.x/2.7.1/logisim-generic-2.7.1.jar
       dest: /opt/logisim
       remote_src: yes
+      creates: /opt/logisim/META-INF/MANIFEST.MF

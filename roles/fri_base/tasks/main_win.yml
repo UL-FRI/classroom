@@ -7,6 +7,12 @@
     name: HideFileExt
     data: 0
     type: dword
+- name: Allow SMB insecure guest access
+  win_regedit:
+    path: HKLM:\Software\Policies\Microsoft\Windows\LanmanWorkstation
+    name: AllowInsecureGuestAuth
+    data: 1
+    type: dword
 - name: Install PSCX
   community.windows.win_psmodule:
     name: Pscx

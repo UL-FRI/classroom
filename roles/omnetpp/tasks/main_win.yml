@@ -23,7 +23,7 @@
         delete_archive: yes
 
     - name: Move OMNet++ to final location
-      win_command: cmd.exe /c move "C:\\omnetpp-{{ target_version }}" "{{ target_dir }}"
+      win_command: cmd.exe /c move "C:\omnetpp-{{ target_version }}" "{{ target_dir }}"
 
     - name: Create OMNet++ compile script
       win_copy:

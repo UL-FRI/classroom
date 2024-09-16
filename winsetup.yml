@@ -13,11 +13,10 @@
     - vars/credentials.yml
     - vars/software_keys.yml
   roles:
-    # - fri_base
-    - matlab
     # - all_classes
-    # - android_studio
-    # - octave
-    # - audacity
-    # - vmware_player
+    # - stm32cube
+    - android_studio
+    #- OR-63717
+    #- RA-63703
+    #- VN-63728
 
