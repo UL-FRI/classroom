@@ -1,4 +1,2 @@
-- import_tasks: main_win.yml
-  when: ansible_connection == 'winrm'
 - import_tasks: main_lin.yml
   when: ansible_connection == 'ssh'

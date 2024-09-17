@@ -20,4 +20,4 @@ VSCode_Extensions:
   - platformio.platformio-ide # ORS-63218
   - stmicroelectronics.stm32-vscode-extension # RA-63703
   - danielpinto8zz6.c-cpp-compile-run
-  # - vadimcn.vscode-lldb
+  - vadimcn.vscode-lldb

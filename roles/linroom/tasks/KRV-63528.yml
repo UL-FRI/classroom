@@ -6,3 +6,7 @@
 # - include_tasks: sagemath.yml
 - include_tasks: jupyter.yml
 - include_tasks: openssl.yml
+- include_tasks: pari.yml
+- include_tasks: ipython.yml
+- inclued_tasks: tqdm.yml
+- inclued_tasks: pwntools.yml
