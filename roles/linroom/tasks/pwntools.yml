@@ -1,0 +1,6 @@
+- name: Install pwntools
+  apt:
+    name:
+      - python3-pwntools
+      - python-pwntools-doc
+    state: latest
