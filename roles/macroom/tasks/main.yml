@@ -1,3 +1,27 @@
+- name: Set hostname
+  hostname:
+    name: '{{ inventory_hostname }}'
+
+- name: Set brew paths
+  lineinfile:
+    path: '{{ item }}'
+    line: 'eval "$(/opt/homebrew/bin/brew shellenv)"'
+  loop:
+    - /etc/profile
+    - /etc/zprofile
+
+- name: Disable SSH password authentication
+  copy:
+    dest: /etc/ssh/sshd_config.d/ansible.conf
+    src: sshd.conf
+  notify: reload sshd
+
+- name: Enable passwordless sudo
+  community.general.sudoers:
+    name: passwordless
+    group: admin
+    commands: ALL
+
 - name: Download R
   get_url:
     url: https://cran.r-project.org/bin/macosx/base/R-4.2.1.pkg 
