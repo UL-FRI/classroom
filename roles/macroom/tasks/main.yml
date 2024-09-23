@@ -22,6 +22,13 @@
     group: admin
     commands: ALL
 
+- name: Show username text box on login screen
+  command: defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME -bool true
+  changed_when: false
+
+# domain join with (AD user must have permission to add computers):
+# sudo dsconfigad -domain fri1.uni-lj.si -username <AD user> -alldomains enable -force
+
 - name: Download R
   get_url:
     url: https://cran.r-project.org/bin/macosx/base/R-4.2.1.pkg 
