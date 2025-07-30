@@ -1,0 +1,4 @@
+- name: Install IPyhon
+  apt:
+    name: ipython3
+    state: latest

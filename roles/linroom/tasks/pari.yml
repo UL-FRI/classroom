@@ -1,0 +1,7 @@
+- name: Install PARI/GP
+  apt:
+    name: 
+      - pari-gp
+      - python3-cypari2
+      - python-cypari2-doc
+    state: latest

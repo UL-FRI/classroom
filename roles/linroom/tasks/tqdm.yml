@@ -1,0 +1,4 @@
+- name: Install tqdm
+  apt:
+    name: python3-tqdm
+    state: latest
